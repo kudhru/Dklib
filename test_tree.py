@@ -43,3 +43,21 @@ def test_delete():
     bst.delete(10)
     bst.delete(4)
     assert dfs(bst) == [9, 12, 17, 18]
+
+
+def test_balanced():
+    bst = BinarySearchTree()
+    bst.put(13)
+    bst.put(10)
+    bst.put(15)
+    bst.put(5)
+    bst.put(11)
+    bst.put(16)
+    bst.put(4)
+    bst.put(6)
+    bst.put(7, False)
+    assert bst.is_unbalanced(bst.root) is True
+
+    bst.delete(7)
+    bst.put(7, True)
+    assert bst.is_unbalanced(bst.root) is False
