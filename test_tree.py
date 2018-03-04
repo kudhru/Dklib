@@ -41,4 +41,5 @@ def test_delete():
     bst.put(18)
     bst.delete(1)
     bst.delete(10)
-    assert dfs(bst) == [4, 9, 12, 17, 18]
+    bst.delete(4)
+    assert dfs(bst) == [9, 12, 17, 18]
